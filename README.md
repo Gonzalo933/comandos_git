@@ -4,6 +4,8 @@
 
 * git remote add origin https://github.com/Gonzalo933/..	-> Crea el repo online
 
+* git clone git@github.com:Gonzalo933/nombre_repo.git 		-> Clonar repo privado
+
 * git clone https://github.com/Gonzalo933/...
 
 * git pull   												-> Descargar

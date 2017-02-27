@@ -28,3 +28,19 @@
 * git checkout "nombre"   								-> Cambiar al branch
 
 * git merge "nombre"										-> añadir cambios del branch "" al branch actual (si antes has hecho git checkout master, estaras en master)
+
+
+## OTROS
+
+| Comando  | Accion |
+| ------------- | ------------- |
+| crontab -e | abrir crontab para añadir tareas a ejecutar |
+| forever start | iniciar un proceso node para siempre (servidor), requiere npm install forever |
+| sudo nano /etc/nginx/sites-available/default  | Nginx configuration  |
+| sudo service nginx restart | Reiniciar nginx  |
+
+
+Prueba, ignorar
+```sh
+$ npm install mysql --save
+```

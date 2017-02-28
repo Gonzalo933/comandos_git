@@ -44,6 +44,7 @@
 ```sh
 $ mysql -u [nombre de usuario] -p
 $ CREATE USER 'nombre_usuario'@'localhost' IDENTIFIED BY 'tu_contrasena';
+$ CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypass';  //Para remoto
 $ GRANT ALL PRIVILEGES ON * . * TO 'nombre_usuario'@'localhost';
 $ FLUSH PRIVILEGES;
 ```

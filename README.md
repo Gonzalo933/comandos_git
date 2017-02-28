@@ -48,4 +48,16 @@ $ CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypass';  //Para remoto
 $ GRANT ALL PRIVILEGES ON * . * TO 'nombre_usuario'@'localhost';
 $ FLUSH PRIVILEGES;
 ```
+Cuando el mysql se ponga tonto con full group
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+
+Configuracion de mysql
+```sh
+$ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+$ sudo service mysql restart
+```
+[permiso]  = CREATE / DROP / DELETE / INSERT / SELECT
+
+GRANT [permiso] ON [nombre de bases de datos].[nombre de tabla] TO ‘[nombre de usuario]’@'localhost’;
+
 https://www.digitalocean.com/community/tutorials/crear-un-nuevo-usuario-y-otorgarle-permisos-en-mysql-es

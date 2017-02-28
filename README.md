@@ -39,8 +39,12 @@
 | sudo nano /etc/nginx/sites-available/default  | Nginx configuration  |
 | sudo service nginx restart | Reiniciar nginx  |
 
+## MYSQL
 
-Prueba, ignorar
 ```sh
-$ npm install mysql --save
+$ mysql -u [nombre de usuario] -p
+$ CREATE USER 'nombre_usuario'@'localhost' IDENTIFIED BY 'tu_contrasena';
+$ GRANT ALL PRIVILEGES ON * . * TO 'nombre_usuario'@'localhost';
+$ FLUSH PRIVILEGES;
 ```
+https://www.digitalocean.com/community/tutorials/crear-un-nuevo-usuario-y-otorgarle-permisos-en-mysql-es

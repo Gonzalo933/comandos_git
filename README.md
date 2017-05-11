@@ -61,3 +61,31 @@ $ sudo service mysql restart
 GRANT [permiso] ON [nombre de bases de datos].[nombre de tabla] TO ‘[nombre de usuario]’@'localhost’;
 
 https://www.digitalocean.com/community/tutorials/crear-un-nuevo-usuario-y-otorgarle-permisos-en-mysql-es
+
+
+## MAIL
+
+```sh
+$ sudo vim /etc/postfix/generic
+Add: www-data gonzalo@gonzalohernandezmunoz.com
+------
+$ sudo vim /etc/postfix/sender_canonical
+Add (I guess it's something like: user - email assigned):
+gonzalo no-reply@gonzalohernandezmunoz.com
+root no-reply@gonzalohernandezmunoz.com
+www-data no-reply@gonzalohernandezmunoz.com
+
+------
+Check some settings on:
+$ sudo vim /etc/postfix/main.cf
+
+sender_canonical_maps = hash:/etc/postfix/sender_canonical
+smtp_generic_maps = hash:/etc/postfix/generic
+------
+$ sudo postmap /etc/postfix/generic
+$ sudo postmap /etc/postfix/sender_canonical
+$ service postfix restart
+(or)
+$ /etc/init.d/postfix restart
+
+```

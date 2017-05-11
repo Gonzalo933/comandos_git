@@ -67,20 +67,23 @@ https://www.digitalocean.com/community/tutorials/crear-un-nuevo-usuario-y-otorga
 
 
 `$ sudo vim /etc/postfix/generic`
-Add: www-data gonzalo@gonzalohernandezmunoz.com
+Add: 
+`www-data gonzalo@gonzalohernandezmunoz.com`
 
 `$ sudo vim /etc/postfix/sender_canonical`
 Add (I guess it's something like: user - email assigned):
+```
 gonzalo no-reply@gonzalohernandezmunoz.com
 root no-reply@gonzalohernandezmunoz.com
 www-data no-reply@gonzalohernandezmunoz.com
-
+```
 ------
 Check some settings on:
 `$ sudo vim /etc/postfix/main.cf`
-
+```
 sender_canonical_maps = hash:/etc/postfix/sender_canonical
 smtp_generic_maps = hash:/etc/postfix/generic
+```
 ------
 ```sh
 $ sudo postmap /etc/postfix/generic
